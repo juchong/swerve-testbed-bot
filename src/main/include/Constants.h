@@ -36,9 +36,9 @@ constexpr double kRotationalSlewRate = 2.0;  // percent per second (1 = 100%)
 
 // Chassis configuration
 constexpr units::meter_t kTrackWidth =
-    0.6731_m;  // Distance between centers of right and left wheels on robot
+    0.395_m;  // Distance between centers of right and left wheels on robot
 constexpr units::meter_t kWheelBase =
-    0.6731_m;  // Distance between centers of front and back wheels on robot
+    0.370_m;  // Distance between centers of front and back wheels on robot
 
 // Angular offsets of the modules relative to the chassis in radians
 constexpr double kFrontLeftChassisAngularOffset = -std::numbers::pi / 2;
@@ -47,15 +47,15 @@ constexpr double kRearLeftChassisAngularOffset = std::numbers::pi;
 constexpr double kRearRightChassisAngularOffset = std::numbers::pi / 2;
 
 // SPARK MAX CAN IDs
-constexpr int kFrontLeftDrivingCanId = 11;
-constexpr int kRearLeftDrivingCanId = 13;
-constexpr int kFrontRightDrivingCanId = 15;
-constexpr int kRearRightDrivingCanId = 17;
+constexpr int kFrontLeftDrivingCanId = 41;
+constexpr int kRearLeftDrivingCanId = 31;
+constexpr int kFrontRightDrivingCanId = 11;
+constexpr int kRearRightDrivingCanId = 21;
 
-constexpr int kFrontLeftTurningCanId = 10;
-constexpr int kRearLeftTurningCanId = 12;
-constexpr int kFrontRightTurningCanId = 14;
-constexpr int kRearRightTurningCanId = 16;
+constexpr int kFrontLeftTurningCanId = 42;
+constexpr int kRearLeftTurningCanId = 32;
+constexpr int kFrontRightTurningCanId = 12;
+constexpr int kRearRightTurningCanId = 22;
 }  // namespace DriveConstants
 
 namespace ModuleConstants {
@@ -66,7 +66,7 @@ constexpr bool kTurningEncoderInverted = true;
 // The MAXSwerve module can be configured with one of three pinion gears: 12T,
 // 13T, or 14T. This changes the drive speed of the module (a pinion gear with
 // more teeth will result in a robot that drives faster).
-constexpr int kDrivingMotorPinionTeeth = 14;
+constexpr int kDrivingMotorPinionTeeth = 12;
 
 // Calculations required for driving motor conversion factors and feed forward
 constexpr double kDrivingMotorFreeSpeedRps =
@@ -113,12 +113,12 @@ constexpr double kTurningMinOutput = -1;
 constexpr double kTurningMaxOutput = 1;
 
 constexpr rev::CANSparkMax::IdleMode kDrivingMotorIdleMode =
-    rev::CANSparkMax::IdleMode::kBrake;
+    rev::CANSparkMax::IdleMode::kCoast;
 constexpr rev::CANSparkMax::IdleMode kTurningMotorIdleMode =
     rev::CANSparkMax::IdleMode::kBrake;
 
-constexpr units::ampere_t kDrivingMotorCurrentLimit = 50_A;
-constexpr units::ampere_t kTurningMotorCurrentLimit = 20_A;
+constexpr units::ampere_t kDrivingMotorCurrentLimit = 45_A;
+constexpr units::ampere_t kTurningMotorCurrentLimit = 25_A;
 }  // namespace ModuleConstants
 
 namespace AutoConstants {
